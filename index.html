@@ -58,6 +58,7 @@
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="#" onclick="showSection('home')" class="hover:text-blue-200 transition">Beranda</a>
                 <a href="#" onclick="showSection('market')" class="hover:text-blue-200 transition">Market</a>
+                <a href="#" onclick="showSection('map')" class="hover:text-blue-200 transition">Peta UMKM</a>
                 <a href="#" onclick="showSection('travel')" class="hover:text-blue-200 transition">Travel</a>
                 <a href="#" onclick="showSection('food')" class="hover:text-blue-200 transition">Food</a>
                 <a href="#" onclick="showSection('legal')" class="hover:text-blue-200 transition">Legalitas</a>
@@ -75,7 +76,7 @@
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-blue-900">Pusat Pemasaran Digital Kota Batu</h1>
                 <p class="text-xl text-gray-600 mb-8">Batu Integrated Marketing & Online Network menghubungkan potensi lokal dengan pasar global melalui satu pintu terintegrasi.</p>
                 <div class="flex space-x-4">
-                    <button onclick="showSection('market')" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 shadow-lg transition">Jelajahi Market</button>
+                    <button onclick="showSection('map')" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 shadow-lg transition">Peta Lokasi UMKM</button>
                     <button onclick="showSection('legal')" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition">Sertifikasi Produk</button>
                 </div>
             </div>
@@ -115,6 +116,23 @@
             </div>
         </div>
     </header>
+
+    <!-- Map Section -->
+    <section id="map-section" class="tab-content py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 text-blue-900 text-center">Pemetaan Lokasi UMKM Kota Batu</h2>
+            <p class="text-gray-600 mb-10 text-center">Temukan berbagai lokasi UMKM dan produk unggulan yang tersebar di seluruh wilayah Kota Wisata Batu melalui peta interaktif di bawah ini.</p>
+            <div class="w-full rounded-2xl overflow-hidden shadow-lg border-4 border-blue-50 relative h-[500px]">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15805.807908871408!2d112.51522881335804!3d-7.873836378413155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78812c7d9bc213%3A0x1c37b77d612e62c1!2sBatu%2C%20Kota%20Batu%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1714400000000!5m2!1sid!2sid" 
+                    class="absolute top-0 left-0 w-full h-full border-0" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
 
     <!-- Market Section -->
     <section id="market-section" class="tab-content py-16 container mx-auto px-6">
