@@ -63,7 +63,7 @@
                 <a href="#" onclick="showSection('food')" class="hover:text-blue-200 transition">Food</a>
                 <a href="#" onclick="showSection('legal')" class="hover:text-blue-200 transition">Legalitas</a>
             </div>
-            <button class="bg-white text-blue-700 px-5 py-2 rounded-full font-semibold hover:bg-blue-50 transition shadow-md">
+            <button onclick="toggleModal('registerModal')" class="bg-white text-blue-700 px-5 py-2 rounded-full font-semibold hover:bg-blue-50 transition shadow-md">
                 Daftar Sekarang
             </button>
         </div>
@@ -356,6 +356,49 @@
         </div>
     </footer>
 
+    <!-- Register Pop Up / Modal -->
+    <div id="registerModal" class="fixed inset-0 bg-black/60 z-[100] hidden flex items-center justify-center backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 p-8 relative">
+            <button onclick="toggleModal('registerModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-blue-900">Daftar Akun BIMO</h2>
+                <p class="text-sm text-gray-500 mt-1">Gabung sekarang dan kembangkan UMKM Anda</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); toggleModal('registerModal');">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nama Lengkap</label>
+                    <input class="shadow-sm border rounded-lg w-full py-2.5 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="name" type="text" placeholder="Masukkan nama Anda">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                    <input class="shadow-sm border rounded-lg w-full py-2.5 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="email" type="email" placeholder="email@contoh.com">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Kata Sandi</label>
+                    <input class="shadow-sm border rounded-lg w-full py-2.5 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" id="password" type="password" placeholder="********">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition shadow-lg">
+                    Daftar Sekarang
+                </button>
+            </form>
+
+            <div class="flex items-center my-6">
+                <div class="flex-grow border-t border-gray-200"></div>
+                <span class="flex-shrink-0 mx-4 text-gray-400 text-sm">Atau daftar dengan</span>
+                <div class="flex-grow border-t border-gray-200"></div>
+            </div>
+
+            <button type="button" class="w-full flex items-center justify-center bg-white border-2 border-gray-200 hover:bg-gray-50 text-gray-700 font-bold py-3 px-4 rounded-xl transition">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo" class="w-5 h-5 mr-3">
+                Akun Google
+            </button>
+        </div>
+    </div>
+
     <script>
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.tab-content');
@@ -365,6 +408,11 @@
                 target.classList.add('active');
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleModal(modalID) {
+            const modal = document.getElementById(modalID);
+            modal.classList.toggle('hidden');
         }
     </script>
 </body>
